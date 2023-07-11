@@ -24,9 +24,14 @@ export const AuthPage = () => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      if(username === "admin" && password === "admin"){
+      if(username === "bob" && password === "bob"){
         console.log("handle ")
-        localStorage.setItem("user", JSON.stringify({username: username, password: password}));
+        localStorage.setItem("user", JSON.stringify({username: username, password: password, type: "bob"}));
+        navigate("/usermode")
+      }
+      else if (username === "alice" && password === "alice"){
+        console.log("handle ")
+        localStorage.setItem("user", JSON.stringify({username: username, password: password, type: "alice"}));
         navigate("/usermode")
       }
     }, 1000);
